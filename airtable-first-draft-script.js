@@ -25,7 +25,7 @@ const SOURCE_RECORD_ID_FIELD = "Source Record ID"; // Name this field in your sy
 // The OpenAI model to use. GPT-5 is state-of-the-art for coding and agentic tasks.
 // Available options: gpt-5 (best quality), gpt-5-mini (faster), gpt-5-nano (fastest)
 // Airtable scripts have a 30-second timeout, so speed is important.
-const OPENAI_MODEL = "gpt-5";
+const OPENAI_MODEL = "gpt-5-mini";
 
 // --- 2. GET INPUT VARIABLES ---
 //
