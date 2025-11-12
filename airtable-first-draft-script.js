@@ -246,7 +246,6 @@ const apiPayload = {
     model: OPENAI_MODEL,
     instructions: systemPrompt, // System-level instructions
     input: userInput, // User's actual request
-    temperature: 0.7, // Slightly higher temperature for more creative, natural writing
     store: false // Don't store the conversation
 };
 
