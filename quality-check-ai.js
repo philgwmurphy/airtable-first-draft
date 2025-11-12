@@ -48,55 +48,26 @@ console.log("Analyzing draft (" + draftContent.length + " characters) with AI...
 
 // --- 4. BUILD QUALITY CHECK PROMPT ---
 
-const qualityCheckPrompt = `You are a Twilio Brand Voice Quality Checker. Analyze the following communication draft against Twilio's brand voice guidelines and provide a detailed assessment.
+const qualityCheckPrompt = `Analyze this Twilio communication draft for brand voice compliance.
 
-# BRAND VOICE GUIDELINES TO CHECK
+CHECK FOR:
+- Narrative paragraphs (not bullet lists)
+- Contractions (we're, you'll, don't)
+- No em dashes (—), no semicolons
+- No "easy/quick/just/simply"
+- Warm, conversational tone
+- Starts with "Ahoy!" or direct (for serious topics)
 
-**Core Requirements:**
-1. **Narrative Paragraphs Over Bullets** - Should default to flowing conversational prose, not bullet-point lists. Bullets only for truly distinct scannable items.
-2. **Empathy & Warmth** - Should feel genuinely caring, like a thoughtful friend who wants to help
-3. **Conversational Tone** - Use contractions frequently (we're, you'll, it's, don't, etc.). Never formal or corporate.
-4. **Storytelling** - Weave facts into narratives with concrete details, not dry information
-5. **Positive Framing** - Frame actions as opportunities, never as burdens
-
-**Greeting Rule:**
-- Should start with "Ahoy!" UNLESS topic is serious (security, outages, billing issues)
-- For serious topics, start directly with content
-
-**Strictly Prohibited:**
-- Em dashes (—)
-- Semicolons in external communications
-- Formal language: "please be advised," "kindly note," "pursuant to," "hereby"
-- Words suggesting ease: "easy," "quick," "just," "simply"
-- "Disruptive" when describing changes
-- Passive voice
-- Overly casual: "OMG," "totally gonna blow your mind"
-
-# DRAFT TO ANALYZE
-
+DRAFT:
 ${draftContent}
 
-# YOUR TASK
+PROVIDE:
+1. Score (0-100)
+2. Top 2 strengths
+3. Top 2 issues (if any)
+4. 1-2 quick fixes
 
-Provide a quality assessment with:
-
-1. **Overall Score** (0-100) based on brand voice compliance
-2. **Score Breakdown:**
-   - Narrative Flow (paragraphs vs bullets): X/20
-   - Empathy & Warmth: X/20
-   - Conversational Tone (contractions, etc.): X/20
-   - Storytelling: X/20
-   - Adherence to Rules (no prohibited elements): X/20
-
-3. **Strengths** - What the draft does well (2-3 specific examples)
-
-4. **Issues to Fix** - Any violations or problems (be specific, quote examples)
-
-5. **Suggestions** - 2-3 concrete improvements to strengthen brand voice
-
-Be honest and specific. Quote examples from the draft to illustrate points.
-
-Format your response clearly with headers for each section.`;
+Be brief and specific.`;
 
 // --- 5. CALL OPENAI RESPONSES API ---
 
