@@ -22,10 +22,10 @@ const NOTES_FIELD = "Notes";
 // The synced record should have a field that links back to the source record ID
 const SOURCE_RECORD_ID_FIELD = "Source Record ID"; // Name this field in your synced table
 
-// The OpenAI model to use. gpt-4o-mini is fast and very capable.
-// gpt-4o is more powerful but slower and more expensive.
+// The OpenAI model to use. GPT-5 is state-of-the-art for coding and agentic tasks.
+// Available options: gpt-5 (best quality), gpt-5-mini (faster), gpt-5-nano (fastest)
 // Airtable scripts have a 30-second timeout, so speed is important.
-const OPENAI_MODEL = "gpt-4o-mini";
+const OPENAI_MODEL = "gpt-5";
 
 // --- 2. GET INPUT VARIABLES ---
 //
